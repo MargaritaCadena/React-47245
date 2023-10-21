@@ -12,7 +12,7 @@ function CartWidget() {
             />{" "}
             <Badge bg="success">9</Badge>
         </Button>
-    );
+    )
 }
 
 export default CartWidget
