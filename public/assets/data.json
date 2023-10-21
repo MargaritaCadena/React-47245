@@ -5,7 +5,8 @@
         "nombre": "Collar",
         "precio": "$20000",
         "stock": 2,
-        "descripcion": "collar rojo en cuero"
+        "descripcion": "collar rojo en cuero",
+        "categoria": "perros"
     },
     {
         "id": 1,
@@ -13,7 +14,8 @@
         "nombre": "Collar2",
         "precio": "$20000",
         "stock": 2,
-        "descripcion": "collar rojo en cuero"
+        "descripcion": "collar rojo en cuero",
+        "categoria": "perros"
     },
     {
         "id": 2,
@@ -21,7 +23,8 @@
         "nombre": "Collar3",
         "precio": "$20000",
         "stock": 2,
-        "descripcion": "collar rojo en cuero"
+        "descripcion": "collar rojo en cuero",
+        "categoria": "gatos"
     },
     {
         "id": 3,
@@ -29,6 +32,7 @@
         "nombre": "Collar4",
         "precio": "$20000",
         "stock": 2,
-        "descripcion": "collar rojo en cuero"
+        "descripcion": "collar rojo en cuero",
+        "categoria": "peces"
     }
 ]

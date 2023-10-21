@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 
 
 function App() {
+  const [productosApp, setProductos] = useState([])  
 
   useEffect(() => {
     fetch("/assets/data.json")
@@ -18,7 +19,6 @@ function App() {
       .catch(error =>{console.log(error)})
   }, [])
 
-  const [productosApp, setProductos] = useState([])  
   return (
     <BrowserRouter>
       <NavBar />
