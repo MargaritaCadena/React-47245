@@ -4,8 +4,8 @@ import ItemListContainer from './ItemListContainer/ItemListContainer'
 function NotFound() {
     return (
         <>
-        <h2>Página no encontrada.</h2>
-        <Link to={<ItemListContainer/>}> Ir a página de inicio </Link>
+            <h2>Página no encontrada.</h2>
+            <Link to={"/"}> Ir a página de inicio </Link>
         </>
     )
 }

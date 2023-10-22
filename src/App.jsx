@@ -5,6 +5,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import NotFound from './components/notFound'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import CategoryFilter from './components/CategoryFilter'
 
 
 function App() {
@@ -24,9 +25,9 @@ function App() {
       <NavBar />
       <Routes>
         <Route exact path="/" element={<ItemListContainer productos={productosApp}/>} />
-        <Route exact path="/categoria/:categoriaId" element={<ItemListContainer productos={productosApp}/>} />
+        <Route exact path="/categoria/:categoriaId" element={<CategoryFilter productos={productosApp}/>} />
         <Route exact path="/item/:itemId" element={<ItemDetailContainer productos={productosApp}/>} />
-        <Route path="*" element={<NotFound />}/>
+        <Route path="*" element={<NotFound/>}/>
       </Routes>
     </BrowserRouter>
   )
