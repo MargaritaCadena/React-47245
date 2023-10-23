@@ -1,38 +1,83 @@
 [
     {
         "id": 0,
-        "imagen": "/assets/images/icono.png",
-        "nombre": "Collar",
-        "precio": "$20000",
-        "stock": 2,
-        "descripcion": "collar rojo en cuero",
+        "imagen": "/assets/images/collar-huella.png",
+        "nombre": "Collar huella",
+        "precio": "$30000",
+        "stock": 10,
+        "descripcion": "Hermoso collar en cuero con una placa que tiene una huellita en la parte delantera",
         "categoria": "perros"
     },
     {
         "id": 1,
-        "imagen": "/assets/images/icono.png",
-        "nombre": "Collar2",
-        "precio": "$20000",
-        "stock": 2,
-        "descripcion": "collar rojo en cuero",
+        "imagen": "/assets/images/collar-hueso.png",
+        "nombre": "Collar hueso",
+        "precio": "$35000",
+        "stock": 25,
+        "descripcion": "Collar para perro con una placa en forma de hueso.",
         "categoria": "perros"
     },
     {
         "id": 2,
-        "imagen": "/assets/images/icono.png",
-        "nombre": "Collar3",
+        "imagen": "/assets/images/collar-rojo.png",
+        "nombre": "Collar rojo",
         "precio": "$20000",
-        "stock": 2,
-        "descripcion": "collar rojo en cuero",
-        "categoria": "gatos"
+        "stock": 15,
+        "descripcion": "Collar rojo en cuero",
+        "categoria": "perros"
     },
     {
         "id": 3,
-        "imagen": "/assets/images/icono.png",
-        "nombre": "Collar4",
+        "imagen": "/assets/images/juguete-gato.png",
+        "nombre": "Juguete plumas",
         "precio": "$20000",
         "stock": 2,
-        "descripcion": "collar rojo en cuero",
+        "descripcion": "Juguete para gato. Hecho en material resistente, tiene un olor atractivo para los gatos.",
+        "categoria": "gatos"
+    },
+    {
+        "id": 4,
+        "imagen": "/assets/images/pecera-cuadrada.png",
+        "nombre": "Pecera cuadrada",
+        "precio": "$250000",
+        "stock": 7,
+        "descripcion": "Hermosa pecera en vidrio, cuadrada, con decoración",
         "categoria": "peces"
+    },
+    {
+        "id": 5,
+        "imagen": "/assets/images/pecera.png",
+        "nombre": "Pecera",
+        "precio": "$120000",
+        "stock": 14,
+        "descripcion": "Pecera redonda con decoración. Apta para bailarinas.",
+        "categoria": "peces"
+    },
+    {
+        "id": 6,
+        "imagen": "/assets/images/pez-payaso.png",
+        "nombre": "Pez payaso",
+        "precio": "$20000",
+        "stock": 10,
+        "descripcion": "Hermoso pez payaso. Se entrega con manual de cuidados y una bolsa de alimento",
+        "categoria": "peces"
+    },
+    {
+        "id": 7,
+        "imagen": "/assets/images/rascador-para-gatos.png",
+        "nombre": "Gimansio gato",
+        "precio": "$200000",
+        "stock": 3,
+        "descripcion": "Gimnasio para gato, con varios niveles, incluye rascador",
+        "categoria": "gatos"
+    },
+    {
+        "id": 8,
+        "imagen": "/assets/images/rascador.png",
+        "nombre": "Rascador",
+        "precio": "$80000",
+        "stock": 6,
+        "descripcion": "Racador para gato en cabuya",
+        "categoria": "gatos"
     }
 ]

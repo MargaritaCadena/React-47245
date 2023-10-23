@@ -1,5 +1,5 @@
 .card{
-    height: 165px;
+    height: 225px;
     width: 165px;
     border-style: solid;
     display: flex;
@@ -7,4 +7,8 @@
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+}
+
+h2 {
+    text-align: center;
 }

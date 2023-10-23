@@ -1,5 +1,6 @@
 import Badge from 'react-bootstrap/Badge'
 import Button from 'react-bootstrap/Button'
+import "./CartWidget.css"
 
 function CartWidget() {
     return (

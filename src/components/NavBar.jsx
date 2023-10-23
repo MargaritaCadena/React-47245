@@ -1,8 +1,8 @@
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-import CartWidget from './CartWidget'
-import { Link } from 'react-router-dom'
+import CartWidget from './CartWidget/CartWidget'
+import { NavLink, Link } from 'react-router-dom'
 
 
 function NavBar() {
@@ -21,16 +21,10 @@ function NavBar() {
                         PETSHOP
                     </Navbar.Brand>
                 </Link>
-
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Link to={"/categoria/perros"}>Perros</Link>
-                        <Link to={"/categoria/gatos"}>Gatos</Link>
-                        <Link to={"/categoria/peces"}>Peces</Link>
+                        <NavLink to={"/categoria/perros"} className="nav-link"> Perros </NavLink>
+                        <NavLink to={"/categoria/gatos"} className="nav-link"> Gatos </NavLink>
+                        <NavLink to={"/categoria/peces"} className="nav-link"> Peces </NavLink>
                         <CartWidget />
-                    </Nav>
-                </Navbar.Collapse>
             </Container>
         </Navbar>
     )
