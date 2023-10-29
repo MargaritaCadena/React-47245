@@ -1,6 +1,6 @@
-import "./ItemDetailContainer.css"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from 'react'
+import ItemDetail from "../ItemDetail/ItemDetail"
 
 function ItemDetailContainer(props) {
     const [productoFiltrado, setProductoFiltrado] = useState(null)
@@ -15,13 +15,7 @@ function ItemDetailContainer(props) {
 
     return (
         productoFiltrado &&
-        <div className="detalleProducto">
-            <img src={productoFiltrado.imagen} />
-            <h2>Nombre: {productoFiltrado.nombre}</h2>
-            <p>Precio: {productoFiltrado.precio}</p>
-            <p>Stock: {productoFiltrado.stock}</p>
-            <p>Descripción: {productoFiltrado.descripcion}</p>
-        </div>
+        <ItemDetail producto={productoFiltrado}/>
     )
 
 }

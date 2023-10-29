@@ -6,6 +6,7 @@ import NotFound from './components/notFound'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import CategoryFilter from './components/CategoryFilter'
+import CartContextComponent  from './context/CartContextComponent'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
   }, [])
 
   return (
+    <CartContextComponent>
     <BrowserRouter>
       <NavBar />
       <Routes>
@@ -30,6 +32,7 @@ function App() {
         <Route path="*" element={<NotFound/>}/>
       </Routes>
     </BrowserRouter>
+    </CartContextComponent>
   )
 }
 
