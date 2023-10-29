@@ -8,7 +8,7 @@ function ItemDetailContainer(props) {
 
     useEffect(() => {
         let producto = props.productos.find((productoArray) => {
-            return productoArray.id === parseInt(itemId)
+            return productoArray.id === itemId
         })
         setProductoFiltrado(producto)
     }, [props.productos])

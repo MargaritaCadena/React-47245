@@ -22,7 +22,7 @@ function ItemDetail(props) {
       newCart[itemIndex].total += contador
     }
     else {
-      newCart.push({ producto: { ...productoFiltrado }, total: contador })
+      newCart.push({ producto: { ...productoFiltrado }, cantidad: contador })
     }
 
     setCart(newCart)

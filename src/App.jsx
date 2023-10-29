@@ -5,6 +5,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import NotFound from './components/notFound'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { collection, getDocs, getFirestore, addDoc } from 'firebase/firestore'
 import CategoryFilter from './components/CategoryFilter'
 import CartContextComponent from './context/CartContextComponent'
 import Checkout from './components/Checkout/Checkout'
@@ -14,10 +15,15 @@ function App() {
   const [productosApp, setProductos] = useState([])
 
   useEffect(() => {
-    fetch("/assets/data.json")
-      .then(respuesta => respuesta.json())
-      .then(productosFetch => {
-        setProductos(productosFetch)
+    const db = getFirestore()
+
+    getDocs(collection(db, 'items'))
+      .then((snapshot) => {
+        const productos = snapshot.docs.map((doc) => {
+          return { id: doc.id, ...doc.data() }
+        })
+        
+        setProductos(productos)
       })
       .catch(error => { console.log(error) })
   }, [])
@@ -30,7 +36,7 @@ function App() {
           <Route exact path="/" element={<ItemListContainer productos={productosApp} />} />
           <Route exact path="/categoria/:categoriaId" element={<CategoryFilter productos={productosApp} />} />
           <Route exact path="/item/:itemId" element={<ItemDetailContainer productos={productosApp} />} />
-          <Route exact path="/cart" element={<Checkout/>} />
+          <Route exact path="/cart" element={<Checkout />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
