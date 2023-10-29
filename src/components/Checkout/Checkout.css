@@ -1,0 +1,10 @@
+.row {
+  width: 98%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.row button {
+  margin: auto;
+  max-width: 200px;
+}

@@ -7,7 +7,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import CategoryFilter from './components/CategoryFilter'
 import CartContextComponent from './context/CartContextComponent'
-import Checkout from './components/Checkout'
+import Checkout from './components/Checkout/Checkout'
 
 
 function App() {
