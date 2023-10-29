@@ -7,6 +7,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import CategoryFilter from './components/CategoryFilter'
 import CartContextComponent from './context/CartContextComponent'
+import Checkout from './components/Checkout'
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route exact path="/" element={<ItemListContainer productos={productosApp} />} />
           <Route exact path="/categoria/:categoriaId" element={<CategoryFilter productos={productosApp} />} />
           <Route exact path="/item/:itemId" element={<ItemDetailContainer productos={productosApp} />} />
+          <Route exact path="/cart" element={<Checkout/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
