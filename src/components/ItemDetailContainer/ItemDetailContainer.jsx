@@ -14,8 +14,9 @@ function ItemDetailContainer(props) {
     }, [props.productos])
 
     return (
-        productoFiltrado &&
-        <ItemDetail producto={productoFiltrado}/>
+        productoFiltrado ?
+        <ItemDetail producto={productoFiltrado}/> :
+        <h2>Producto no encontrado</h2>
     )
 
 }
