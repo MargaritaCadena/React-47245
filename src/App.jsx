@@ -6,11 +6,11 @@ import NotFound from './components/notFound'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import CategoryFilter from './components/CategoryFilter'
-import CartContextComponent  from './context/CartContextComponent'
+import CartContextComponent from './context/CartContextComponent'
 
 
 function App() {
-  const [productosApp, setProductos] = useState([])  
+  const [productosApp, setProductos] = useState([])
 
   useEffect(() => {
     fetch("/assets/data.json")
@@ -18,20 +18,20 @@ function App() {
       .then(productosFetch => {
         setProductos(productosFetch)
       })
-      .catch(error =>{console.log(error)})
+      .catch(error => { console.log(error) })
   }, [])
 
   return (
     <CartContextComponent>
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route exact path="/" element={<ItemListContainer productos={productosApp}/>} />
-        <Route exact path="/categoria/:categoriaId" element={<CategoryFilter productos={productosApp}/>} />
-        <Route exact path="/item/:itemId" element={<ItemDetailContainer productos={productosApp}/>} />
-        <Route path="*" element={<NotFound/>}/>
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route exact path="/" element={<ItemListContainer productos={productosApp} />} />
+          <Route exact path="/categoria/:categoriaId" element={<CategoryFilter productos={productosApp} />} />
+          <Route exact path="/item/:itemId" element={<ItemDetailContainer productos={productosApp} />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </CartContextComponent>
   )
 }
