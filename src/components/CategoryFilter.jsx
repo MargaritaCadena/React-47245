@@ -1,21 +1,32 @@
 import ItemListContainer from "./ItemListContainer/ItemListContainer"
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 
-function CategoryFilter(props) {
-    const [productosFiltrado, setProductosFiltrados] = useState([])
-    const { categoriaId } = useParams()
+function CategoryFilter() {
+  const [productosFiltrado, setProductosFiltrados] = useState([])
+  const { categoriaId } = useParams()
 
-    useEffect(() => {
-        let productos = props.productos.filter((producto) => {
-            return producto.categoria === categoriaId 
+  useEffect(() => {
+    const db = getFirestore()
+    const q = query(collection(db, 'items'), where('categoria', '==', categoriaId))
+
+    getDocs(q)
+      .then((snapshot) => {
+        const productos = snapshot.docs.map((doc) => {
+          return { id: doc.id, ...doc.data() }
         })
-        setProductosFiltrados(productos)
-    }, [props.productos, categoriaId]) 
 
-    return (
-        <ItemListContainer productos={productosFiltrado}/>
-    )
+        setProductosFiltrados(productos)
+      })
+      .catch(error => { console.log(error) })
+  }, [categoriaId])
+
+  return (
+    productosFiltrado.length > 0 ?
+      <ItemListContainer productos={productosFiltrado} /> :
+      <h2>Categoria no encontrada</h2>
+  )
 }
 
 export default CategoryFilter

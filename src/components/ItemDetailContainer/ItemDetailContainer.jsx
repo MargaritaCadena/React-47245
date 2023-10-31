@@ -1,23 +1,27 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from 'react'
+import { getFirestore, doc, getDoc } from 'firebase/firestore'
 import ItemDetail from "../ItemDetail/ItemDetail"
 
-function ItemDetailContainer(props) {
-    const [productoFiltrado, setProductoFiltrado] = useState(null)
-    const { itemId } = useParams()
+function ItemDetailContainer() {
+  const [productoFiltrado, setProductoFiltrado] = useState(null)
+  const { itemId } = useParams()
 
-    useEffect(() => {
-        let producto = props.productos.find((productoArray) => {
-            return productoArray.id === itemId
-        })
-        setProductoFiltrado(producto)
-    }, [props.productos])
+  useEffect(() => {
+    const db = getFirestore()
 
-    return (
-        productoFiltrado ?
-        <ItemDetail producto={productoFiltrado}/> :
-        <h2>Producto no encontrado</h2>
-    )
+    getDoc(doc(db, 'items', itemId))
+      .then((doc) => {
+        setProductoFiltrado({ id: doc.id, ...doc.data() })
+      })
+      .catch(error => { console.log(error) })
+  }, [itemId])
+
+  return (
+    productoFiltrado ?
+      <ItemDetail producto={productoFiltrado} /> :
+      <h2>Producto no encontrado</h2>
+  )
 
 }
 

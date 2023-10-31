@@ -5,7 +5,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import NotFound from './components/notFound'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { collection, getDocs, getFirestore, addDoc } from 'firebase/firestore'
+import { collection, getDocs, getFirestore } from 'firebase/firestore'
 import CategoryFilter from './components/CategoryFilter'
 import CartContextComponent from './context/CartContextComponent'
 import Checkout from './components/Checkout/Checkout'
@@ -34,8 +34,8 @@ function App() {
         <NavBar />
         <Routes>
           <Route exact path="/" element={<ItemListContainer productos={productosApp} />} />
-          <Route exact path="/categoria/:categoriaId" element={<CategoryFilter productos={productosApp} />} />
-          <Route exact path="/item/:itemId" element={<ItemDetailContainer productos={productosApp} />} />
+          <Route exact path="/categoria/:categoriaId" element={<CategoryFilter />} />
+          <Route exact path="/item/:itemId" element={<ItemDetailContainer />} />
           <Route exact path="/cart" element={<Checkout />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
