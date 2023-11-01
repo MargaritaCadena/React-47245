@@ -12,7 +12,9 @@ function ItemDetailContainer() {
 
     getDoc(doc(db, 'items', itemId))
       .then((doc) => {
-        setProductoFiltrado({ id: doc.id, ...doc.data() })
+        if (doc.exists()) {
+          setProductoFiltrado({ id: doc.id, ...doc.data() })
+        }
       })
       .catch(error => { console.log(error) })
   }, [itemId])

@@ -8,3 +8,18 @@
   margin: auto;
   max-width: 200px;
 }
+
+.checkout-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.checkout-card img {
+  width: 90px;
+}
+
+#total {
+  margin-top: 20px;
+}

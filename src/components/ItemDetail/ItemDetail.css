@@ -1,20 +1,36 @@
-.detalleProducto{
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.detalleProducto {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-img{
-width: 35%;
+img {
+  width: 35%;
 }
 
-h2{
-    font-weight: bold;
-    font-style: italic;
+h2 {
+  font-weight: bold;
+  font-style: italic;
 }
 
-p{
-    font-size: x-large;
-    font-style: oblique;
+p {
+  font-size: x-large;
+  font-style: oblique;
+}
+
+.contador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contadorNum {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#botonAgregar {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }

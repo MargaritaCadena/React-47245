@@ -1,6 +1,7 @@
 import { CartContext } from "../../context/CartContextComponent"
 import "./ItemDetail.css"
 import { useContext, useState } from "react"
+import { Button } from "react-bootstrap";
 
 
 function ItemDetail(props) {
@@ -19,7 +20,7 @@ function ItemDetail(props) {
     })
 
     if (itemIndex !== -1) {
-      newCart[itemIndex].total += contador
+      newCart[itemIndex].cantidad += contador
     }
     else {
       newCart.push({ producto: { ...productoFiltrado }, cantidad: contador })
@@ -33,16 +34,16 @@ function ItemDetail(props) {
       <div className="detalleProducto">
         <img src={productoFiltrado.imagen} />
         <h2>Nombre: {productoFiltrado.nombre}</h2>
-        <p>Precio: {productoFiltrado.precio}</p>
+        <p>Precio: ${productoFiltrado.precio}</p>
         <p>Descripción: {productoFiltrado.descripcion}</p>
       </div>
-      <div>
+      <div className="contador">
         <div>
-          <button onClick={resta}>-</button>
-          <p>{contador}</p>
-          <button onClick={() => setContador(contador + 1)}>+</button>
+          <Button variant="outline-info" onClick={resta}>-</Button>
+          <p id="contadorNum">{contador}</p>
+          <Button variant="outline-info" onClick={() => setContador(contador + 1)}>+</Button>
         </div>
-        <button onClick={agregarAlCarro}>Agregar al carro</button>
+        <Button id="botonAgregar" variant="success" onClick={agregarAlCarro}>Agregar al carro</Button>
       </div>
 
     </>

@@ -9,11 +9,11 @@ function CartWidget() {
   const [ cartTotal, setCartTotal ] = useState(0)
 
   useEffect(() => {
-    const total = cart.reduce((acc, item) => {
-      return acc + item.total
+    const cantidad = cart.reduce((acc, item) => {
+      return acc + item.cantidad
     }, 0)
 
-    setCartTotal(total)
+    setCartTotal(cantidad)
   }, [cart])
 
   return (

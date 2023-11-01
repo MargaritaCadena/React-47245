@@ -1,14 +1,14 @@
-.card{
-    height: 225px;
-    width: 165px;
-    border-style: solid;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+.card {
+  height: 225px;
+  width: 165px;
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
 h2 {
-    text-align: center;
+  text-align: center;
 }

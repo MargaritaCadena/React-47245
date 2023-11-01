@@ -18,7 +18,7 @@ function Checkout() {
   // Calcula el valor total del carrito
   useEffect(() => {
     const total = cart.reduce((acc, item) => {
-      return acc + item.producto.precio * item.total
+      return acc + item.producto.precio * item.cantidad
     }, 0)
 
     setTotal(total)
@@ -68,14 +68,14 @@ function Checkout() {
       <>
         {cart.map((item) => {
           return (
-            <div key={item.producto.id}>
+            <div className="checkout-card" key={item.producto.id}>
               <img src={item.producto.imagen} />
               <h2>{item.producto.nombre}</h2>
-              <p>${item.producto.precio}x{item.total} = ${item.producto.precio * item.total}</p>
+              <p>${item.producto.precio}x{item.cantidad} = ${item.producto.precio * item.cantidad}</p>
             </div>
           )
         })}
-        <h2>Total: ${total}</h2>
+        <h2 id="total">Total: ${total}</h2>
         <Form onSubmit={crearOrden}>
           <Row>
             <Form.Group as={Col} controlId="name">
